@@ -1,4 +1,8 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50 p-4">
       <div className="relative w-full max-w-md">
@@ -16,10 +20,10 @@ export default function Home() {
       </p>
 
       <div className="mt-6 w-full max-w-md">
-        <button className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700">
+        <button onClick={() => router.push("/login")} className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700">
           Sign in
         </button>
-        <button className="w-full mt-3 border border-teal-600 text-teal-600 py-3 rounded-lg hover:bg-teal-50">
+        <button onClick={() => router.push("/register")} className="w-full mt-3 border border-teal-600 text-teal-600 py-3 rounded-lg hover:bg-teal-50">
           Create an account
         </button>
       </div>
